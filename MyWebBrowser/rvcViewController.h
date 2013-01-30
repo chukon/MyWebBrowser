@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface rvcViewController : UIViewController
+{
+    IBOutlet UIWebView *WebView;
+    IBOutlet UITextField *txtURL:
+}
+@property (retain, nonatomic) UIWebView *WebView;
+@property (retain, nonatomic) UITextField *txtURL;
 
 @end

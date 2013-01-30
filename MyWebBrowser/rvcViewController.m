@@ -13,6 +13,8 @@
 @end
 
 @implementation rvcViewController
+@synthesize txtURL;
+@synthesize webView;
 
 - (void)viewDidLoad
 {
@@ -26,4 +28,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [txtURL release];
+    [WebView release];
+    [super dealloc];
+}
+- (IBAction)btnGO:(id)sender {
+    NSURL *url = [NSURL URLWithString:txtURL.text];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:req];
+    [super viewDidLoad];
+}
 @end
